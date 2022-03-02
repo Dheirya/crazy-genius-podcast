@@ -186,7 +186,7 @@
               Loading AI-Generated Paragraph...
             </center>
         </h3>
-        <h3 class="text-xl leading-tight" id="aiparagraph">Fuck</h3><br/>
+        <h3 class="text-xl leading-tight" id="aiparagraph"></h3><br/>
         <p class="text-lg leading-tight"><i>Please note that all AI-Generated responses <b>DO NOT</b> reflect my own thoughts/opinions. Responses may be offensive to some with certain queries; use cautiously.</i></p>
       </section>
       <footer class="bg-white">
@@ -287,14 +287,14 @@
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("aiparagraph").innerHTML = resp.output;
                 document.getElementById("aiparagraph").style.display = "block";
+                $(document).profanityFilter({externalSwears: 'profanity.json'});
             })()
          }
          function search(ele) {
             if(event.key === 'Enter') {
                 aigenerate();
             }
-         }
-         $(document).profanityFilter({externalSwears: 'profanity.json'});
+         }         
       </script>
    </body>
 </html>
